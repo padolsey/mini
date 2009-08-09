@@ -7,12 +7,8 @@ Dual licensed under the MIT and GPL licenses.
 
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/copyleft/gpl.html
- 
----
 
-Read more: http://james.padolsey.com
-
----
+**Read more: [Introducing “mini”](http://james.padolsey.com/javascript/mini/)**
 
 Usage:
 
