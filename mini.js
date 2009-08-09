@@ -30,7 +30,7 @@ var mini = (function(){
         var simple = /^[\w\-_#]+$/.test(selector);
         
         if (!simple && context.querySelectorAll) {
-            return context.querySelectorAll(selector);
+            return realArray(context.querySelectorAll(selector));
         }
         
         if (selector.indexOf(',') > -1) {
