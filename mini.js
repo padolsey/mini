@@ -30,7 +30,7 @@ var mini = (function(){
         var simple = /^[\w\-_#]+$/.test(selector);
         
         if (!simple && context.querySelectorAll) {
-            //return realArray(context.querySelectorAll(selector));
+            return realArray(context.querySelectorAll(selector));
         }
         
         if (selector.indexOf(',') > -1) {
@@ -100,7 +100,6 @@ var mini = (function(){
         var parentSelector = selectorParts.pop();
         
         if (parentSelector === '>') {
-            console.log('a');
             return filterParents(selectorParts, collection, true);
         }
         

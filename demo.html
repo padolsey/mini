@@ -23,7 +23,12 @@
         <!-- </body content> -->
         
         <script type="text/javascript">
+        try {
             
+            alert(mini('div > p').length);
+        } catch(e) {
+            alert(e.message);
+        }
         </script>
         
     </body>
