@@ -12,10 +12,10 @@
 
 var mini = (function(){
     
-    var snack = />|(?:[\w-_\.#]+)+(?:\[\w+?=([\'"])?(?:\\\1|.)+?\1\])?/ig,
+    var snack = /\*|>|(?:[\w\-\\.#]+)+(?:\[\w+?=([\'"])?(?:\\\1|.)+?\1\])?/ig,
         exprClassName = /^(?:[\w\-_]+)?\.([\w\-_]+)/,
         exprId = /^(?:[\w\-_]+)?#([\w\-_]+)/,
-        exprNodeName = /^([\w\-_]+)/,
+        exprNodeName = /^([\w\*\-_]+)/,
         na = [null,null];
     
     function _find(selector, context) {
