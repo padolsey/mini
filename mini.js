@@ -30,7 +30,7 @@ var mini = (function(){
         var simple = /^[\w\-_#]+$/.test(selector);
         
         if (!simple && context.querySelectorAll) {
-            return realArray(context.querySelectorAll(selector));
+            //return realArray(context.querySelectorAll(selector));
         }
         
         if (selector.indexOf(',') > -1) {
@@ -100,6 +100,7 @@ var mini = (function(){
         var parentSelector = selectorParts.pop();
         
         if (parentSelector === '>') {
+            console.log('a');
             return filterParents(selectorParts, collection, true);
         }
         
@@ -120,7 +121,7 @@ var mini = (function(){
             
             do {
                 
-                matches = !nodeName || nodeName === parent.nodeName.toLowerCase();
+                matches = !nodeName || nodeName === '*' || nodeName === parent.nodeName.toLowerCase();
                 matches = matches && (!id || parent.id === id);
                 matches = matches && (!className || RegExp('(^|\\s)' + className + '(\\s|$)').test(parent.className));
                 
@@ -133,7 +134,7 @@ var mini = (function(){
             }
         }
         
-        return ret;
+        return selectorParts[0] && ret[0] ? filterParents(selectorParts, ret) : ret;
         
     }
     
